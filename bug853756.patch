@@ -1,0 +1,26 @@
+From 5bdbeb5421fa8c354c2c29f1d8361c94d6b9c799 Mon Sep 17 00:00:00 2001
+From: longxiuping <longxiuping@tcl.com>
+Date: Fri, 12 Apr 2013 11:43:57 +0800
+Subject: [PATCH] test
+
+---
+ apps/system/js/statusbar.js |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+diff --git a/apps/system/js/statusbar.js b/apps/system/js/statusbar.js
+index 60f6d64..2a2c599 100644
+--- a/apps/system/js/statusbar.js
++++ b/apps/system/js/statusbar.js
+@@ -491,6 +491,9 @@ var StatusBar = {
+         case 'connected':
+           icon.hidden = false;
+ 
++          if(icon.dataset.connecting) {
++            delete icon.dataset.connecting;
++          }
+           var relSignalStrength =
+             wifiManager.connectionInformation.relSignalStrength;
+           icon.dataset.level = Math.floor(relSignalStrength / 25);
+-- 
+1.7.0.4
+
